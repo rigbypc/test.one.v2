@@ -14,7 +14,6 @@ public class TransactionProcessor {
 	
 	public void transaction(String transId, Double amount) {
 		crt.show(transId);
-		crt.show(amount);
 		
 		amount *= fee;
 		

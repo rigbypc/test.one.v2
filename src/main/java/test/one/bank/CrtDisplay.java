@@ -10,7 +10,7 @@ public class CrtDisplay {
 	}
 
 	public void show(String transId) {
-		crt(transId);
+		crt.show(transId);
 		
 	}
 	
