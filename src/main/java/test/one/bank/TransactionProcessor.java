@@ -2,23 +2,29 @@ package test.one.bank;
 
 public class TransactionProcessor {
 
-	private CrtDisplay crt;
-	private HashStorager hash;
+	private IDisplay display;
+	private IStorage storage;
 	Double fee = 1.5;
 	
 	public TransactionProcessor() {
-		crt = new CrtDisplay();
-		hash = new HashStorager();
+		display = new CrtDisplay();
+		storage = new HashStorager();
+		fee = 1.277;
+	}
+	
+	public TransactionProcessor(IDisplay display, IStorage storage) {
+		this.display = display;
+		this.storage = storage;
 		fee = 1.277;
 	}
 	
 	public void transaction(String transId, Double amount) {
-		crt.show(transId);
+		display.show(transId);
 		
 		amount *= fee;
 		
-		crt.show(amount);
-		hash.put(transId, amount);
+		display.show(amount);
+		storage.put(transId, amount);
 	}
 
 }
