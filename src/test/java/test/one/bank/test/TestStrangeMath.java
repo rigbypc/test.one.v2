@@ -20,6 +20,15 @@ class TestStrangeMath {
 		
 		//negative: actual = 25.856
 		assertEquals(25.856, StrangeMath.strangeFunction(-123.123), 0.001);
+		
+		//edge case on largest value
+		Double max = Double.MAX_VALUE;
+		assertEquals(Math.sqrt(max), StrangeMath.strangeFunction(max));
+		
+		//min or largest negative
+		Double min = Double.MAX_VALUE/-5.44;
+		assertEquals(Math.sqrt(min*-5.43), StrangeMath.strangeFunction(min));
+		
 	}
 	
 	@Test
